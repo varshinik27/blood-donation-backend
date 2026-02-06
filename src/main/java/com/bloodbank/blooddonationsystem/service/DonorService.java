@@ -1,4 +1,5 @@
 package com.bloodbank.blooddonationsystem.service;
+// Service layer for handling donor-related business logic
 
 import com.bloodbank.blooddonationsystem.entity.Donor;
 import com.bloodbank.blooddonationsystem.repository.DonorRepository;
