@@ -4,7 +4,7 @@
 The Blood Donation Management System – Backend is a RESTful web application developed using Spring Boot.
 It provides APIs to manage blood donors, their availability, and blood group–based search.
 
-The backend uses H2 in-memory database for development and demonstration purposes and supports full CRUD operations.
+The backend uses an H2 in-memory database for development and demonstration purposes and supports full CRUD operations.
 
 ⚙️ Technologies Used
 
@@ -71,7 +71,7 @@ Password: (empty)
 http://localhost:8080/h2-console
 
 
-⚠️ Note:
+⚠️ Note
 H2 is an in-memory database. Data will be lost on application restart or redeployment.
 In cloud deployment (Render), a persistent database like PostgreSQL is recommended.
 
@@ -84,27 +84,26 @@ PUT	/api/donors/{id}	Update donor
 PATCH	/api/donors/{id}/availability	Update availability
 DELETE	/api/donors/{id}	Delete donor
 ▶️ How to Run Backend (Local)
-Step 1: Open project in IntelliJ
+Step 1: Open Project
 
-Ensure Java 17 is configured.
+Open the project in IntelliJ IDEA
 
-Step 2: Run application
+Ensure Java 17 is configured
 
-Run:
+Step 2: Run Application
+
+Run the main class:
 
 BloodDonationSystemApplication.java
 
-Build Backend:
-
-<img width="1073" height="580" alt="image" src="https://github.com/user-attachments/assets/564c9a0c-3935-4f84-847c-33ee30f0aab0" />
-
-
+📸 Build Backend
+<img width="1073" height="580" alt="Build Backend" src="https://github.com/user-attachments/assets/564c9a0c-3935-4f84-847c-33ee30f0aab0" />
 Step 3: Access APIs
 http://localhost:8080/api/donors
 
 🔍 Code Quality Analysis – SonarQube
 
-SonarQube is used to analyze code quality, identify bugs, vulnerabilities, and code smells.
+SonarQube is used to analyze code quality and detect bugs, vulnerabilities, and code smells.
 
 Step 1: Start SonarQube using Docker
 docker run -d --name sonarqube -p 9000:9000 sonarqube
@@ -120,12 +119,8 @@ mvn clean verify sonar:sonar \
 -Dsonar.host.url=http://localhost:9000 \
 -Dsonar.login=YOUR_SONAR_TOKEN
 
-📸 Screenshot
-
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/d4ddc765-4bca-486d-8955-87d39cacc226" />
-<img width="1084" height="584" alt="image" src="https://github.com/user-attachments/assets/26cc8dfb-a2b0-4a1d-b285-ab7ba2faa9e3" />
-
-
+📸 SonarQube Screenshots
+<img width="1920" height="1080" alt="Sonar Dashboard" src="https://github.com/user-attachments/assets/d4ddc765-4bca-486d-8955-87d39cacc226" /> <img width="1084" height="584" alt="Sonar Report" src="https://github.com/user-attachments/assets/26cc8dfb-a2b0-4a1d-b285-ab7ba2faa9e3" />
 🐳 Dockerization
 
 The backend application is containerized using Docker for consistent deployment.
@@ -143,16 +138,13 @@ docker build -t blood-donation-backend .
 Run Docker Container
 docker run -p 8080:8080 blood-donation-backend
 
-📸 Screenshots
-
-<img width="1089" height="576" alt="image" src="https://github.com/user-attachments/assets/7c907c6f-2dcc-4b42-b692-c9e0af6010f2" />
-
+📸 Docker Screenshot
+<img width="1089" height="576" alt="Docker Run" src="https://github.com/user-attachments/assets/7c907c6f-2dcc-4b42-b692-c9e0af6010f2" />
 ⚙️ CI/CD – GitHub Actions
 
 GitHub Actions is used to automatically build the backend application on every push.
 
 Workflow File
-
 .github/workflows/backend-ci.yml
 
 name: Backend CI
@@ -177,10 +169,8 @@ jobs:
     - name: Build with Maven
       run: mvn clean install
 
-📸 Screenshot
-<img width="1893" height="964" alt="image" src="https://github.com/user-attachments/assets/663a07af-233f-4a27-a555-61e9a84509b8" />
-
-
+📸 GitHub Actions Screenshot
+<img width="1893" height="964" alt="GitHub Actions Build" src="https://github.com/user-attachments/assets/663a07af-233f-4a27-a555-61e9a84509b8" />
 🚀 Deployment Flow
 Developer Push
    ↓
@@ -191,7 +181,6 @@ GitHub Actions (Build)
 Docker Image
    ↓
 Render Deployment
-
 
 🎯 Purpose of the Project
 
